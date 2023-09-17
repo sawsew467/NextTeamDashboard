@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 
 // ** Layout Import
-import BlankLayout from 'src/@core/layouts/LandingLayout'
+import BlankLayout from 'src/@core/layouts/BlankLayout'
 
 // ** Demo Imports
 import FooterIllustrations from 'src/views/pages/misc/FooterIllustrations'

@@ -7,10 +7,9 @@ import useMediaQuery from '@mui/material/useMediaQuery'
 import DashboardLayout from 'src/@core/layouts/DashboardLayout'
 
 // ** Navigation Imports
-import { landingLayoutVavigation, dashboardLayoutVavigation } from 'src/navigation/vertical'
+import { landingLayoutVavigation, dashboardLayoutVavigation } from 'src/navigation'
 
 // ** Component Import
-import UpgradeToProButton from './components/UpgradeToProButton'
 import VerticalAppBarContent from './components/vertical/AppBarContent'
 import VerticalDashboardAppBarContent from './components/vertical/DashboardAppBarContent'
 
