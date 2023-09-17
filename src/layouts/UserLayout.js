@@ -4,24 +4,25 @@ import useMediaQuery from '@mui/material/useMediaQuery'
 
 // ** Layout Imports
 // !Do not remove this Layout import
-import VerticalLayout from 'src/@core/layouts/VerticalLayout'
+import DashboardLayout from 'src/@core/layouts/DashboardLayout'
 
 // ** Navigation Imports
-import VerticalNavItems from 'src/navigation/vertical'
+import { landingLayoutVavigation, dashboardLayoutVavigation } from 'src/navigation/vertical'
 
 // ** Component Import
 import UpgradeToProButton from './components/UpgradeToProButton'
 import VerticalAppBarContent from './components/vertical/AppBarContent'
+import VerticalDashboardAppBarContent from './components/vertical/DashboardAppBarContent'
 
 // ** Hook Import
 import { useSettings } from 'src/@core/hooks/useSettings'
-import BlankLayout from 'src/@core/layouts/BlankLayout'
-import { useState } from 'react'
+import BlankLayout from 'src/@core/layouts/LandingLayout'
+import { useRouter } from 'next/router'
 
 const UserLayout = ({ children }) => {
   // ** Hooks
   const { settings, saveSettings } = useSettings()
-
+  
   /**
    *  The below variable will hide the current layout menu at given screen size.
    *  The menu will be accessible from the Hamburger icon only (Vertical Overlay Menu).
@@ -46,18 +47,39 @@ const UserLayout = ({ children }) => {
     )
   }
 
-  const [layout, setLayout] = useState('dashboard')
+  // const [layout, setLayout] = useState('hui')
+
+  const router = useRouter()
 
   return (
     <>
-      {layout !== 'dashboard' ? (
-        <BlankLayout>{children}</BlankLayout>
-      ) : (
-        <VerticalLayout
+      {router.pathname.startsWith("/dashboard") ? (
+        <DashboardLayout
           hidden={hidden}
           settings={settings}
           saveSettings={saveSettings}
-          verticalNavItems={VerticalNavItems()} // Navigation Items
+          verticalNavItems={dashboardLayoutVavigation()} // Navigation Items
+          afterVerticalNavMenuContent={UpgradeToProImg}
+          verticalAppBarContent={(
+            props // AppBar Content
+          ) => (
+            <VerticalDashboardAppBarContent
+              hidden={hidden}
+              settings={settings}
+              saveSettings={saveSettings}
+              toggleNavVisibility={props.toggleNavVisibility}
+            />
+          )}
+        >
+          {children}
+          {/* <UpgradeToProButton /> */}
+        </DashboardLayout>
+      ) : (
+        <BlankLayout
+          hidden={hidden}
+          settings={settings}
+          saveSettings={saveSettings}
+          verticalNavItems={landingLayoutVavigation()} // Navigation Items
           afterVerticalNavMenuContent={UpgradeToProImg}
           verticalAppBarContent={(
             props // AppBar Content
@@ -72,7 +94,7 @@ const UserLayout = ({ children }) => {
         >
           {children}
           {/* <UpgradeToProButton /> */}
-        </VerticalLayout>
+        </BlankLayout>
       )}
     </>
   )

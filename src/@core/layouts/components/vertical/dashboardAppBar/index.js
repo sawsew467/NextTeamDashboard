@@ -4,17 +4,11 @@ import MuiAppBar from '@mui/material/AppBar'
 import MuiToolbar from '@mui/material/Toolbar'
 
 const AppBar = styled(MuiAppBar)(({ theme }) => ({
-  backgroundColor: "#fff ",
-  position: "fixed",
-  zIndex: 5,
-  top: 0,
-  left: 0,
-  right: 0,
   transition: 'none',
   alignItems: 'center',
   justifyContent: 'center',
   padding: theme.spacing(0, 6),
-  boxShadow: theme.shadows[4],
+  backgroundColor: 'transparent',
   color: theme.palette.text.primary,
   minHeight: theme.mixins.toolbar.minHeight,
   [theme.breakpoints.down('sm')]: {

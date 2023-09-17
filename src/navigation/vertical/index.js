@@ -29,7 +29,7 @@ import MeetingRoomIcon from '@mui/icons-material/MeetingRoom'
 import FilePresentIcon from '@mui/icons-material/FilePresent'
 import SummarizeIcon from '@mui/icons-material/Summarize'
 
-const navigation = () => {
+export const dashboardLayoutVavigation = () => {
   return [
     {
       title: 'Trang chủ',
@@ -138,7 +138,44 @@ const navigation = () => {
       path: '/dashboard/reports',
       icon: SummarizeIcon
     },
+    {
+      title: 'Login',
+      icon: Login,
+      path: '/pages/login',
+      openInNewTab: true
+    },
   ]
 }
 
-export default navigation
+export const landingLayoutVavigation = () => {
+  return [
+    {
+      title: 'Trang chủ',
+      icon: HomeOutline,
+      path: '/'
+    },
+    {
+      title: 'Sự kiện',
+      icon: HomeOutline,
+      path: '/activities'
+    },
+    {
+      title: 'Câu lạc bộ',
+      icon: HomeOutline,
+      path: '/clubs'
+    },
+    {
+      title: 'Đăng ký',
+      icon: Login,
+      path: '/auth/login',
+      openInNewTab: true
+    },
+    {
+      title: 'Đăng nhập',
+      icon: Login,
+      path: '/auth/register',
+      openInNewTab: true
+    },
+  ]
+}
+

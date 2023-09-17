@@ -37,15 +37,15 @@ const MainContentWrapper = styled(Box)({
 const ContentWrapper = styled('main')(({ theme }) => ({
   flexGrow: 1,
   width: '100%',
-  padding: theme.spacing(6),
   transition: 'padding .25s ease-in-out',
   [theme.breakpoints.down('sm')]: {
     paddingLeft: theme.spacing(4),
     paddingRight: theme.spacing(4)
-  }
+  },
+  marginTop: theme.spacing(16)
 }))
 
-const VerticalLayout = props => {
+const LandingLayout = props => {
   // ** Props
   const { settings, children, scrollToTop } = props
 
@@ -62,24 +62,20 @@ const VerticalLayout = props => {
   return (
     <>
       <VerticalLayoutWrapper className='layout-wrapper'>
-        <Navigation
-          navWidth={navWidth}
-          navVisible={navVisible}
-          setNavVisible={setNavVisible}
-          toggleNavVisibility={toggleNavVisibility}
-          {...props}
-        />
         <MainContentWrapper className='layout-content-wrapper'>
           <AppBar toggleNavVisibility={toggleNavVisibility} {...props} />
 
           <ContentWrapper
             className='layout-page-content'
             sx={{
-              ...(contentWidth === 'boxed' && {
-                mx: 'auto',
-                '@media (min-width:1440px)': { maxWidth: 1440 },
-                '@media (min-width:1200px)': { maxWidth: '100%' }
-              })
+              ...(contentWidth === 'boxed'
+
+              // && {
+              //   mx: 'auto',
+              //   '@media (min-width:1440px)': { maxWidth: 1440 },
+              //   '@media (min-width:1200px)': { maxWidth: '100%' }
+              // }
+              )
             }}
           >
             {children}
@@ -106,4 +102,4 @@ const VerticalLayout = props => {
   )
 }
 
-export default VerticalLayout
+export default LandingLayout

@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Events() {
+function EventDashboard() {
   return (
-    <div>Events</div>
+    <div>EventDashboard</div>
   )
 }
 
-export default Events
+export default EventDashboard
