@@ -34,7 +34,7 @@ const navigation = () => {
     {
       title: 'Trang chủ',
       icon: HomeOutline,
-      path: '/'
+      path: '/dashboard'
     },
     {
       sectionTitle: 'Thông tin'
@@ -42,27 +42,27 @@ const navigation = () => {
     {
       title: 'Thông báo',
       icon: NotificationsIcon,
-      path: '/notifications'
+      path: '/dashboard/notifications'
     },
     {
       title: 'Hoạt động',
       icon: AssignmentIcon,
-      path: '/activities'
+      path: '/dashboard/activities'
     },
     {
       title: 'Sự kiện',
-      path: '/events',
+      path: '/dashboard/events',
       icon: CelebrationIcon
     },
     {
       title: 'Điểm hoạt động',
       icon: AssessmentIcon,
-      path: '/ranking'
+      path: '/dashboard/ranking'
     },
     {
       title: 'Thành viên',
       icon: Groups2Icon,
-      path: '/members'
+      path: '/dashboard/members'
     },
     {
       sectionTitle: 'Tài chính'
@@ -70,17 +70,17 @@ const navigation = () => {
     {
       title: 'Khoản nộp',
       icon: PaymentsIcon,
-      path: '/payment-form'
+      path: '/dashboard/payment-form'
     },
     {
       title: 'Lịch sử giao dịch',
-      path: '/transaction-history',
+      path: '/dashboard/transaction-history',
       icon: HistoryIcon
     },
     {
       title: 'Chi tiêu CLB',
       icon: MonetizationOnIcon,
-      path: '/expense-details'
+      path: '/dashboard/expense-details'
     },
     {
       sectionTitle: 'Tài liệu'
@@ -88,11 +88,11 @@ const navigation = () => {
     {
       title: 'Kho lưu trữ',
       icon: StorageIcon,
-      path: '/document-storage'
+      path: '/dashboard/document-storage'
     },
     {
       title: 'Đề xuất hoạt động',
-      path: '/activity-proposals',
+      path: '/dashboard/activity-proposals',
       icon: AddCommentIcon
     },
     {
@@ -101,41 +101,41 @@ const navigation = () => {
     {
       title: 'Thủ quỹ',
       icon: PriceChangeIcon,
-      path: '/treasurer'
+      path: '/dashboard/treasurer'
     },
     {
       title: 'Điểm danh',
       icon: FactCheckIcon,
-      path: '/attendances'
+      path: '/dashboard/attendances'
     },
     {
       title: 'Duyệt thành viên',
       icon: HowToRegIcon,
-      path: '/member-approval'
+      path: '/dashboard/member-approval'
     },
     {
       title: 'Tạo thông báo',
       icon: NotificationAddIcon,
-      path: '/notification-creator'
+      path: '/dashboard/notification-creator'
     },
     {
       icon: NoteAddIcon,
       title: 'Tạo hoạt động',
-      path: '/activity-creator'
+      path: '/dashboard/activity-creator'
     },
     {
       icon: MeetingRoomIcon,
       title: 'Cơ sở vật chất',
-      path: '/infrastructures'
+      path: '/dashboard/infrastructures'
     },
     {
       title: 'Kế hoạch',
-      path: '/plans',
+      path: '/dashboard/plans',
       icon: FilePresentIcon
     },
     {
       title: 'Báo cáo',
-      path: '/reports',
+      path: '/dashboard/reports',
       icon: SummarizeIcon
     },
   ]

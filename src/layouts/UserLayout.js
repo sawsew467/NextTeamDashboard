@@ -15,6 +15,8 @@ import VerticalAppBarContent from './components/vertical/AppBarContent'
 
 // ** Hook Import
 import { useSettings } from 'src/@core/hooks/useSettings'
+import BlankLayout from 'src/@core/layouts/BlankLayout'
+import { useState } from 'react'
 
 const UserLayout = ({ children }) => {
   // ** Hooks
@@ -44,27 +46,35 @@ const UserLayout = ({ children }) => {
     )
   }
 
+  const [layout, setLayout] = useState('dashboard')
+
   return (
-    <VerticalLayout
-      hidden={hidden}
-      settings={settings}
-      saveSettings={saveSettings}
-      verticalNavItems={VerticalNavItems()} // Navigation Items
-      afterVerticalNavMenuContent={UpgradeToProImg}
-      verticalAppBarContent={(
-        props // AppBar Content
-      ) => (
-        <VerticalAppBarContent
+    <>
+      {layout !== 'dashboard' ? (
+        <BlankLayout>{children}</BlankLayout>
+      ) : (
+        <VerticalLayout
           hidden={hidden}
           settings={settings}
           saveSettings={saveSettings}
-          toggleNavVisibility={props.toggleNavVisibility}
-        />
+          verticalNavItems={VerticalNavItems()} // Navigation Items
+          afterVerticalNavMenuContent={UpgradeToProImg}
+          verticalAppBarContent={(
+            props // AppBar Content
+          ) => (
+            <VerticalAppBarContent
+              hidden={hidden}
+              settings={settings}
+              saveSettings={saveSettings}
+              toggleNavVisibility={props.toggleNavVisibility}
+            />
+          )}
+        >
+          {children}
+          {/* <UpgradeToProButton /> */}
+        </VerticalLayout>
       )}
-    >
-      {children}
-      {/* <UpgradeToProButton /> */}
-    </VerticalLayout>
+    </>
   )
 }
 
